@@ -10,23 +10,34 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            var testSample1 = "( 1 + 2 )";
-            var testSample2 = "( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )";
+            //var testSample1 = "( 1 + 2 )";
+            //var testSample2 = "( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )";
 
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.ResetColor();
-            Console.WriteLine("{0} = {1}", testSample1, SimpleCalculatorWithOneStack.Calculate(testSample1));
-            Console.WriteLine("{0} = {1}", testSample2, SimpleCalculatorWithOneStack.Calculate(testSample2));
+            //Console.ForegroundColor = ConsoleColor.Blue;
+            //Console.ResetColor();
+            //Console.WriteLine("{0} = {1}", testSample1, SimpleCalculatorWithOneStack.Calculate(testSample1));
+            //Console.WriteLine("{0} = {1}", testSample2, SimpleCalculatorWithOneStack.Calculate(testSample2));
 
 
-            var testSample3 = "( 6 * 7 + 8 + 10 + 4 * 5 )";
-            var testSample4 = "( ( 1 + square 2 ) * ( 2 * 3 * 7 + 8 + 10 + 4 * 5 ) )";
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.ResetColor();
-            Console.WriteLine("{0} = {1}", testSample1, SimplecalculatorWithTwoStack.Calculate(testSample1));
-            Console.WriteLine("{0} = {1}", testSample2, SimplecalculatorWithTwoStack.Calculate(testSample2));
-            Console.WriteLine("{0} = {1}", testSample3, SimplecalculatorWithTwoStack.Calculate(testSample3));
-            Console.WriteLine("{0} = {1}", testSample4, SimplecalculatorWithTwoStack.Calculate(testSample4));
+            //var testSample3 = "( 6 * 7 + 8 + 10 + 4 * 5 )";
+            //var testSample4 = "( ( 1 + square 2 ) * ( 2 * 3 * 7 + 8 + 10 + 4 * 5 ) )";
+            //Console.ForegroundColor = ConsoleColor.Blue;
+            //Console.ResetColor();
+            //Console.WriteLine("{0} = {1}", testSample1, SimplecalculatorWithTwoStack.Calculate(testSample1));
+            //Console.WriteLine("{0} = {1}", testSample2, SimplecalculatorWithTwoStack.Calculate(testSample2));
+            //Console.WriteLine("{0} = {1}", testSample3, SimplecalculatorWithTwoStack.Calculate(testSample3));
+            //Console.WriteLine("{0} = {1}", testSample4, SimplecalculatorWithTwoStack.Calculate(testSample4));
+
+            ////3+(4-5)*6-7/5 => 345-6*+75/-
+            var testSample5 = "345-6*+84/-";
+            Console.WriteLine("{0} = {1}", testSample5, Suffix.Calculate(testSample5));
+
+            Console.WriteLine(Suffix.TranslateInfixToSuffixExpression("3+(4-5)*6-8/4"));
+
+            //var testSample6 = "-+3*-456/84";
+            //Console.WriteLine("{0} = {1}", testSample6, Infix.Calculate(testSample6));
+
+           // Console.WriteLine(Infix.Calculate(Infix.Translate("3+(4-5)*6-8/4")));
 
             Console.Read();
         }
